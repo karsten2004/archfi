@@ -32,6 +32,7 @@ mainmenu(){
 	options+=("${txteditor}" "(${txtoptional})")
 	options+=("${txtdiskpartmenu}" "")
 	options+=("${txtselectpartsmenu}" "")
+	options+=("manual formatting/ mounting" "")
 	options+=("" "")
 	options+=("${txtreboot}" "")
 	sel=$(whiptail --backtitle "${apptitle}" --title "${txtmainmenu}" --menu "" --cancel-button "${txtexit}" --default-item "${nextitem}" 0 0 0 \
@@ -57,6 +58,10 @@ mainmenu(){
 			;;
 			"${txtselectpartsmenu}")
 				selectparts
+				nextitem="${txtreboot}"
+			;;
+			"manual formatting/ mounting")
+				installmenu
 				nextitem="${txtreboot}"
 			;;
 			"${txthelp}")
